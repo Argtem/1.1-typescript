@@ -1,0 +1,7 @@
+
+## Часть 5. Анализ ошибок компилятора
+
+|**A**| `Type 'string' is not assignable to type 'number'.` | Переменная `count` выведена как `number`. Присвоение строки недопустимо.<br>**Исправление:** `count = 10;` или изменить тип на `number \| string`. |
+| **B** | `Expected 2 arguments, but got 1.` | Функция `add` требует два аргумента.<br>**Исправление:** `add(2, 3);` или сделать второй параметр необязательным: `function add(x: number, y: number = 0): number`. |
+| **C** | `Type 'null' is not assignable to type 'string'.` | При `strictNullChecks` `null` не входит в тип `string`.<br>**Исправление:** `let name: string \| null = null;` или `let name: string = "";`. |
+| **D** | `A function whose declared type is neither 'void' nor 'any' must return a value.` | Функция объявлена с возвращаемым типом `string`, но ничего не возвращает.<br>**Исправление:** добавить `return "Привет, " + name;` или изменить тип на `void`. |
